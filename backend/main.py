@@ -1,7 +1,6 @@
 from fastapi import FastAPI
+from routes.api import router
 
-app = FastAPI()
+app = FastAPI(title="SenseEd API")
 
-@app.get("/")
-def home():
-    return {"message": "SenseEd API is running"}
+app.include_router(router)
